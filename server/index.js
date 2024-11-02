@@ -7,8 +7,18 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-// Enable CORS
-app.use(cors({ origin: "https://help-desk-frontend.onrender.com/" }));
+// Enable CORS for specific origins
+const allowedOrigins = [
+  "http://localhost:5173", 
+  "https://help-desk-frontend.onrender.com",
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, 
+}));
+
 
 const connectDB = async () => {
   try {
