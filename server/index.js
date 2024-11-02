@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 // Enable CORS
-app.use(cors({ origin: "https://help-desk-mearn-lw6i.vercel.app" }));
+app.use(cors({ origin: "http://localhost:5173" }));
 
 const connectDB = async () => {
   try {
