@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 // Enable CORS
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: "https://help-desk-frontend.onrender.com/" }));
 
 const connectDB = async () => {
   try {
