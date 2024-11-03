@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await API.post("/users/login", formData);
+      const { data } = await API.post("/api/users/login", formData);
       localStorage.setItem("token", data.token);
       navigate("/tickets");
     } catch (error) {
